@@ -1,0 +1,11 @@
+¦	
+OProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoControllerSystem.Web.Mvc.ControllerSystem.Web.Mvc.ControllerBaseobjecth
+
+Index(int)ZProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Index(int)j
+Create(int)[Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Create(int)ñ
+NCreate(int, Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.imagen_producto)žProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Create(int, Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.imagen_producto)h
+
+Edit(int?)ZProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Edit(int?)ã
+GEdit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.imagen_producto)—Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Edit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.imagen_producto)l
+Delete(int?)\Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.Delete(int?)ˆ
+ImagenProductoController()jProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ImagenProductoController.ImagenProductoController()

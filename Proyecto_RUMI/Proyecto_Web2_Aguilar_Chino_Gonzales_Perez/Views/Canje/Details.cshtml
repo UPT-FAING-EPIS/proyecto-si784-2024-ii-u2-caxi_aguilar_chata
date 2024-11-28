@@ -1,0 +1,44 @@
+﻿@model Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto
+
+@{ ViewBag.Title = "Details"; }
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (var item in Model.imagen_producto.Where(ip => ip.estado == "A"))
+                    {
+        <div class="carousel-item @(item.es_principal ? "active" : "")">
+            <img src="@item.url_imagen" class="d-block w-100" alt="Imagen del producto">
+        </div>}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-6 detalle-tienda elemento-gestion">
+            <div class="elementos-gestion">
+                <h3 class="h1">@Model.nombre</h3>
+                <p class="h5">@Model.descripcion</p>
+                <h3 class="h2">®@Model.precio</h3>
+                <br />
+                <p>Quedan @Model.stock unidad(es)</p>
+                <button type="button" class="btn btn-edit" onclick="location.href='@Url.Action("Add", new { id = Model.id_producto })'">
+                    <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleIndicators'));
+</script>

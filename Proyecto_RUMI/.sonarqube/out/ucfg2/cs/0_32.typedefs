@@ -1,0 +1,35 @@
+‡
+9Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuarioobjectP
+	usuario()CProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.usuario()N
+Listar()BProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.Listar()V
+Obtener(int)FProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.Obtener(int)Z
+Buscar(string)HProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.Buscar(string)P
+	Guardar()CProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.Guardar()R
+
+Eliminar()DProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.Eliminar()V
+TotalSaldo()FProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.TotalSaldo()n
+ObtenerSaldoUsuario(int)RProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.ObtenerSaldoUsuario(int)Z
+id_usuario.getHProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.id_usuario.getZ
+id_usuario.setHProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.id_usuario.setV
+usuario1.getFProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.usuario1.getV
+usuario1.setFProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.usuario1.setP
+	clave.getCProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.clave.getP
+	clave.setCProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.clave.setT
+celular.getEProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.celular.getT
+celular.setEProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.celular.setR
+
+estado.getDProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.estado.getR
+
+estado.setDProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.estado.set^
+tipo_usuario.getJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.tipo_usuario.get^
+tipo_usuario.setJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.tipo_usuario.setP
+	saldo.getCProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.saldo.getP
+	saldo.setCProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.saldo.setp
+limite_transferencias.getSProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.limite_transferencias.getp
+limite_transferencias.setSProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.limite_transferencias.set`
+tipo_usuario1.getKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.tipo_usuario1.get`
+tipo_usuario1.setKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.tipo_usuario1.setb
+transferencias.getLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.transferencias.getb
+transferencias.setLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.transferencias.setd
+transferencias1.getMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.transferencias1.getd
+transferencias1.setMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario.transferencias1.set

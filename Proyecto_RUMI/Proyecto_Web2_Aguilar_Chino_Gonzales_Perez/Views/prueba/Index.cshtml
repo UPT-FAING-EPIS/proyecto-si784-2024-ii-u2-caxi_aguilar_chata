@@ -1,0 +1,210 @@
+﻿@{
+    ViewBag.Title = "Index";
+    string contenidoUsu = "";
+    string contenidoPro = "";
+}
+
+<main>
+    <div class="titulo-seccion text-center my-4">
+        <h1>Rumis en circulación: ®@ViewBag.totalSaldo</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">Usuarios</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var c in ViewBag.usuario)
+                                {
+                                    contenidoUsu = contenidoUsu + "{name: '" + @c.usuario1 + "', data: [" + c.saldo + "]},";
+                                    <tr>
+                                        <td>@c.usuario1</td>
+                                        <td>@c.saldo</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div id="container" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0">Productos más canjeados</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var v in ViewBag.s)
+                                {
+                                    contenidoPro = contenidoPro + "{name: '" + @v.Nombre + "', data: [" + v.TotalQuantity + "]},";
+                                    <tr>
+                                        <td>@v.Nombre</td>
+                                        <td>@v.TotalQuantity</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div id="container2" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="card-title mb-0">Canjes por Mes</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="ventasPorMesChart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .chart-container {
+            min-width: 310px;
+            height: 380px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border-radius: 10px;
+        }
+
+        .card-header {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                Highcharts.chart('container', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Usuarios',
+                        align: 'center'
+                    },
+                    xAxis: {
+                        categories: ['Categorías'],
+                        crosshair: true,
+                        accessibility: {
+                            description: 'Categorías'
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Cantidad de saldo'
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: ' unidades'
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: [
+                        @Html.Raw(contenidoUsu)
+                    ]
+                });
+
+                Highcharts.chart('container2', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Productos más canjeados',
+                        align: 'center'
+                    },
+                    xAxis: {
+                        categories: ['Categorías'],
+                        crosshair: true,
+                        accessibility: {
+                            description: 'Categorías'
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Cantidad de Productos'
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: ' unidades'
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: [
+                        @Html.Raw(contenidoPro)
+                    ]
+                });
+
+                var ventasPorMesData = @Html.Raw(ViewBag.ventasPorMesData);
+                var categories = ventasPorMesData.map(function (item) {
+                    return item.Año + '-' + ('0' + item.Mes).slice(-2);
+                });
+                var data = ventasPorMesData.map(function (item) {
+                    return item.TotalVentas;
+                });
+
+                Highcharts.chart('ventasPorMesChart', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: 'Canjes por Mes'
+                    },
+                    xAxis: {
+                        categories: categories,
+                        title: {
+                            text: 'Fecha'
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Total Canjes'
+                        }
+                    },
+                    series: [{
+                        name: 'Canjes',
+                        data: data
+                    }]
+                });
+            });
+        });
+    </script>
+</main>

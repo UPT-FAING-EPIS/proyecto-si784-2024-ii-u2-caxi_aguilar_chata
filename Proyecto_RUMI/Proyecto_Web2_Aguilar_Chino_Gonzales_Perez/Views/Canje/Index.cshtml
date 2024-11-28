@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<main class="tienda">
+	@if (TempData["Message"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			@TempData["Message"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="titulo-seccion">
+		<h1>Tienda de canjes</h1>
+	</div>
+	<div class="text-center py-3">
+		<img src="~/Content/Images/banner.png" alt="category-banner" />
+	</div>
+	<div class="container">
+		<div class="row elementos-gestion">
+			@foreach (var producto in Model)
+			{
+				<div class="col-md-3 mb-4">
+					<div class="card elemento-gestion h-100">
+						@if (producto.imagen_producto.Any())
+						{
+							var imagenPrincipal = producto.imagen_producto.FirstOrDefault(imagen => imagen.es_principal == true);
+							<img src="@imagenPrincipal.url_imagen" style="object-fit: cover; width: 100%;" height="200" alt="Imagen del producto">
+						}
+						<div class="card-body text-center">
+							<h5 class="h4 elemento-titulo">@producto.nombre</h5>
+							<p class="card-text">@producto.descripcion</p>
+							<p class="h5"><b>®@producto.precio</b></p>
+							<div class="actions">
+								<button type="button" class="btn btn-delete" onclick="location.href='@Url.Action("Details", new { id = producto.id_producto })'">
+									<i class="fa-solid fa-eye"></i> Ver
+								</button>
+								<button type="button" class="btn btn-edit" onclick="location.href='@Url.Action("Add", new { id = producto.id_producto })'">
+									<i class="fa-solid fa-cart-plus"></i> Agregar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</main>

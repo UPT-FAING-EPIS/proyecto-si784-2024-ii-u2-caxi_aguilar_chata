@@ -1,0 +1,18 @@
+ö
+8Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.CompraobjectM
+Compra()AProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.Compra()e
+ListarVentasPorMes()MProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.ListarVentasPorMes()M
+Listar()AProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.Listar()U
+Obtener(int)EProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.Obtener(int)W
+id_compra.getFProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.id_compra.getW
+id_compra.setFProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.id_compra.setY
+id_usuario.getGProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.id_usuario.getY
+id_usuario.setGProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.id_usuario.set]
+fecha_compra.getIProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.fecha_compra.get]
+fecha_compra.setIProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.fecha_compra.sete
+fecha_formateada.getMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.fecha_formateada.gete
+fecha_formateada.setMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.fecha_formateada.setO
+	total.getBProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.total.getO
+	total.setBProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.total.set_
+DetalleCompra.getJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.DetalleCompra.get_
+DetalleCompra.setJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra.DetalleCompra.set

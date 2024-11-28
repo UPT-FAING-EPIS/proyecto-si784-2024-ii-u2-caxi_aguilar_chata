@@ -1,0 +1,1 @@
+Roslyn version: 4.11.0.0Language version: CSharp7_3!Concurrent execution: enabledáÜFile 'C:\Users\Stryker\Desktop\proyecto-si784-2024-ii-u1-aguilar_caxi_chata\Proyecto_RUMI\Proyecto_Web2_Aguilar_Chino_Gonzales_Perez\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs' was recognized as generated

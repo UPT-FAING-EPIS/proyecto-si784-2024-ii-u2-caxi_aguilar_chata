@@ -1,0 +1,15 @@
+¦	
+>Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuarioobject_
+tipo_usuario()MProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.tipo_usuario()S
+Listar()GProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.Listar()[
+Obtener(int)KProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.Obtener(int)_
+Buscar(string)MProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.Buscar(string)U
+	Guardar()HProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.Guardar()W
+
+Eliminar()IProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.Eliminar()i
+id_tipo_usuario.getRProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.id_tipo_usuario.geti
+id_tipo_usuario.setRProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.id_tipo_usuario.setS
+tipo.getGProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.tipo.getS
+tipo.setGProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.tipo.set[
+usuarios.getKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.usuarios.get[
+usuarios.setKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.tipo_usuario.usuarios.set

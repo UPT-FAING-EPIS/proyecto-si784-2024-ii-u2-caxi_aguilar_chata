@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.Compra>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<main>
+	<div class="titulo-seccion">
+		<h1>Ordenes de compra</h1>
+	</div>
+	<div class="container">
+		<div class="row elementos-gestion">
+			@foreach (var item in Model)
+			{
+				<div class="col-md-6 mb-4">
+					<div class="elemento-gestion h-100">
+						<div class="card-body text-center">
+							<h5 class="h4 elemento-titulo">N° de orden: @item.id_compra</h5>
+							<p class="h5"><b>Fecha:</b> @item.fecha_formateada</p>
+							<p class="h5"><b>Total: ®@item.total</b></p>
+							<div class="actions">
+								<button type="button" class="btn btn-edit" onclick="location.href='@Url.Action("Details", new { id = item.id_compra })'">
+									<i class="fa-solid fa-eye"></i> Ver detalles
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</main>

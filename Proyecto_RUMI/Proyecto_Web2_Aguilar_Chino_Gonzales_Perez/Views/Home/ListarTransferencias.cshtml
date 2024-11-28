@@ -1,0 +1,45 @@
+﻿@model List<Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.TransferenciaResult>
+
+@{
+	ViewBag.Title = "Movimientos";
+	int contador = 1;
+}
+
+<main>
+	<div class="titulo-seccion">
+		<h1>Mis movimientos</h1>
+	</div>
+	<div class="container elemento-gestion mt-4">
+		@if (Model.Count != 0)
+		{
+			<table class=" table table-hover text-center elementos-gestion">
+				<thead>
+					<tr class="elemento-titulo">
+						<th scope="col">N°</th>
+						<th scope="col">EMISOR</th>
+						<th scope="col">USUARIO</th>
+						<th scope="col">MONTO</th>
+						<th scope="col">FECHA</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<th scope="row">@(contador)</th>
+							<td>@item.NombreEmisor</td>
+							<td>@item.NombreReceptor</td>
+							<td class="@((item.CantidadFormateada.StartsWith("-")) ? "text-danger" : "text-success")">@item.CantidadFormateada</td>
+							<td>@item.FechaFormateada</td>
+						</tr>
+						contador++;
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<h5>No hay movimientos disponibles</h5>
+		}
+	</div>
+</main>

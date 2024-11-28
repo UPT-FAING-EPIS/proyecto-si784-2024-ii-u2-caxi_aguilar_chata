@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario>
+
+@{ ViewBag.Title = "Gestión de Usuarios"; }
+
+<main>
+	@if (TempData["Message"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			@TempData["Message"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="titulo-seccion">
+		<h1>Gestión de usuarios</h1>
+		<button type="button" class="h1" onclick="location.href='@Url.Action("Create")'">
+			<i class="fa-solid fa-circle-plus"></i>
+		</button>
+	</div>
+	<div class="container">
+		<div class="row elementos-gestion">
+			@foreach (var item in Model)
+			{
+				<div class="col-md-6 mb-4">
+					<div class="elemento-gestion h-100">
+						<div class="card-body text-center">
+							<h5 class="h4 elemento-titulo">@item.tipo_usuario1.tipo</h5>
+							<p class="h5"><i class="fa-solid fa-user"></i> @item.usuario1</p>
+							<p class="h5"><i class="fa-solid fa-phone"></i> @item.celular</p>
+							<div class="actions">
+								<button type="button" class="btn btn-edit" onclick="location.href='@Url.Action("Edit", new { id = item.id_usuario })'">
+									<i class="fa-solid fa-pen-to-square"></i> Editar
+								</button>
+								<button type="button" class="btn btn-delete" onclick="confirmarEliminacion('@Url.Action("Delete", new { id = item.id_usuario })')">
+									<i class="fa-solid fa-trash-can"></i> Borrar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	<script>
+		function confirmarEliminacion(url) {
+			if (confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
+				window.location.href = url;
+			}
+		}
+	</script>
+</main>

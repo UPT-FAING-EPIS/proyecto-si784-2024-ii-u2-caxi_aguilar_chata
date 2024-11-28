@@ -1,0 +1,59 @@
+﻿@model Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto
+
+@{
+	ViewBag.Title = "Editar producto";
+}
+
+<main class="formulario">
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			@TempData["ErrorMessage"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="titulo-seccion">
+		<h1>Crear producto</h1>
+	</div>
+	@using (Html.BeginForm("Edit", "Producto", FormMethod.Post, new { @class = "mb-3" }))
+	{
+		@Html.HiddenFor(model => model.id_producto)
+		@Html.HiddenFor(model => model.fecha_creacion)
+		@Html.HiddenFor(model => model.estado)
+		<div class="row">
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.nombre, "Nombre", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.nombre, new { @class = "form-control", required = "required" })
+				<div class="form-text">Ingrese el nombre.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.descripcion, "Descripcion", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.descripcion, new { @class = "form-control", required = "required" })
+				<div class="form-text">Ingrese la descripcion.</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.precio, "Precio", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.precio, new { @class = "form-control", type = "number", step = "0.01", required = "required" })
+				<div class="form-text">Ingrese el precio.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.stock, "Stock", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.stock, new { @class = "form-control", type = "number", required = "required" })
+				<div class="form-text">Ingrese el stock.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.categoria, "Categoria", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.categoria, new { @class = "form-control", required = "required" })
+				<div class="form-text">Ingrese la categoria.</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="d-flex justify-content-center align-items-center gap-4">
+				@Html.ActionLink("Volver", "Index")
+				<button type="submit" class="btn btn-save"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+			</div>
+		</div>
+	}
+</main>

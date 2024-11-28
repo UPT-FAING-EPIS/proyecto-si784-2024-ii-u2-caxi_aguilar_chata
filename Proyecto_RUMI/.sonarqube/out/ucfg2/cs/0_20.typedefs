@@ -1,0 +1,11 @@
+Ÿ	
+IProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoControllerSystem.Web.Mvc.ControllerSystem.Web.Mvc.ControllerBaseobject\
+Index()QProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Index()f
+Details(int)VProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Details(int)^
+Create()RProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Create()Ó
+BCreate(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto)ŒProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Create(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto)b
+
+Edit(int?)TProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Edit(int?)Ï
+@Edit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto)ŠProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Edit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.producto)f
+Delete(int?)VProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.Delete(int?)v
+ProductoController()^Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.ProductoController.ProductoController()

@@ -1,0 +1,56 @@
+﻿@model Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario
+
+@{
+	ViewBag.Title = "Crear usuario";
+}
+
+<main class="formulario">
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			@TempData["ErrorMessage"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="titulo-seccion">
+		<h1>Crear usuario</h1>
+	</div>
+	@using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "mb-3" }))
+	{
+		<div class="row">
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.usuario1, "Tipo de usuario", new { @class = "form-label" })
+				@Html.DropDownList("tipo_usuario", (SelectList)ViewBag.TipoUsuarioList, new { @class = "form-control" })
+				<div class="form-text">Seleccione el tipo.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.usuario1, "Nombre", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.usuario1, new { @class = "styled-input", required = "required" })
+				<div class="form-text">Ingrese el nombre.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.clave, "Clave", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.clave, new { @class = "form-control", type = "password", required = "required" })
+				<div class="form-text">Ingrese la clave.</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.saldo, "Saldo", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.saldo, new { @class = "form-control", type = "number", step = "0.01", required = "required" })
+				<div class="form-text">Ingrese el saldo.</div>
+			</div>
+			<div class="col-md mt-4">
+				@Html.LabelFor(model => model.celular, "Celular", new { @class = "form-label" })
+				@Html.TextBoxFor(model => model.celular, new { @class = "form-control" })
+				<div class="form-text">Ingrese el celular.</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="d-flex justify-content-center align-items-center gap-4">
+				@Html.ActionLink("Cancelar", "Index")
+				<button type="submit" class="btn btn-save"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+			</div>
+		</div>
+	}
+</main>

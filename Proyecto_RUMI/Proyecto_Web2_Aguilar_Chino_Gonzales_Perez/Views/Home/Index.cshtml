@@ -1,0 +1,343 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var currentUser = @ViewBag.Username;
+}
+
+<main>
+    <style>
+        /* (1) - Wrapper */
+        .wrapper {
+            width: 1152px;
+            height: 1248px;
+            display: grid;
+            grid: repeat(26, 1fr) / repeat(24, 1fr);
+            margin: var(--spaceMD) auto;
+        }
+
+        /* (2) - Balance */
+        .balance {
+            grid-area: 1 / 1 / span 9 / span 13;
+            background: linear-gradient(90deg, var(--primary), var(--darkGradient));
+            padding: var(--spaceXL);
+            border-radius: var(--roundLG);
+        }
+
+            .balance h1, .balance h2 {
+                color: var(--negative);
+            }
+
+            .balance header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: var(--spaceLG);
+            }
+
+        .date h1 {
+            font-size: var(--lg);
+            font-weight: var(--light);
+        }
+
+        .date h2 {
+            font-size: var(--md);
+            font-weight: var(--thin);
+        }
+
+        .percentage h1 {
+            font-size: var(--lg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .percentage h1 svg {
+                margin-left: var(--spaceXS);
+                transform: scale(1.2);
+                transform-origin: center center;
+            }
+
+                .percentage h1 svg path {
+                    fill: var(--negative);
+                }
+
+        .balance footer h1 {
+            font-weight: var(--black);
+        }
+
+            .balance footer h1 span:first-child {
+                font-size: var(--lg);
+            }
+
+            .balance footer h1 span:last-child {
+                font-size: var(--xl);
+            }
+
+        /* (3) - Summary */
+        .summary {
+            grid-area: 11 / 1 / span 16 / span 13;
+            background: linear-gradient(180deg, var(--negative), var(--lightGradient));
+            padding: var(--spaceXL);
+            border-radius: var(--roundLG);
+            box-shadow: var(--shadow);
+        }
+
+            .summary h1 {
+                color: var(--text);
+                font-weight: var(--light);
+            }
+
+            .summary header h1 {
+                font-size: var(--lg);
+            }
+
+        .account-number, .transactions-limit {
+            background-color: var(--negative);
+            border-radius: var(--roundSM);
+            box-shadow: var(--shadow);
+            padding: var(--spaceLG);
+            margin-top: var(--spaceMD);
+        }
+
+            .account-number h1, .transactions-limit h1 {
+                font-size: var(--md);
+            }
+
+                .account-number h1:last-child, .transactions-limit h1:last-child {
+                    font-weight: var(--bold);
+                }
+
+        /* (4) - Payment Due */
+        .payment-due {
+            grid-area: 1 / 15 / span 5 / span 10;
+            background: linear-gradient(180deg, var(--negative), var(--lightGradient));
+            padding: var(--spaceLG);
+            border-radius: var(--roundMD);
+            box-shadow: var(--shadow);
+            display: flex; /* Añadir display flex */
+            align-items: center; /* Centrar elementos verticalmente */
+            justify-content: space-between; /* Separar elementos horizontalmente */
+            position: relative; /* Para permitir el uso de position en el btn-edit */
+        }
+
+            .payment-due h1 {
+                color: var(--secondary);
+                font-size: 36px;
+                margin: 0; /* Eliminar márgenes del h1 */
+            }
+
+                .payment-due h1:first-child {
+                    font-weight: var(--bold);
+                    margin-bottom: var(--spaceXS);
+                }
+
+            .payment-due .btn-edit {
+                margin-left: 20px; /* Asegurar que el botón se alinee a la derecha */
+                font-size: 24px; /* Ajustar tamaño de la fuente para el enlace */
+                padding: 0; /* Eliminar el padding para ajustar el tamaño al texto */
+                background: none; /* Eliminar el fondo si tiene alguno */
+                border: none; /* Eliminar cualquier borde */
+                text-decoration: none; /* Eliminar subrayado */
+                color: var(--secondary); /* Ajustar color para que coincida con el diseño */
+                position: absolute; /* Posicionar absolutamente */
+                right: var(--spaceLG); /* Alinear al borde derecho con el mismo padding que el contenedor */
+            }
+
+        /* (5) - Activities Detail*/
+        .activitiesDetail {
+            grid-area: 1 / 1 / span 18 / span 18;
+            background: linear-gradient(180deg, var(--negative), var(--lightGradient));
+            border-radius: var(--roundLG);
+            box-shadow: var(--shadow);
+        }
+
+            .activitiesDetail h1 {
+                color: var(--text);
+                font-weight: var(--light);
+                font-size: var(--lg);
+                padding: var(--spaceXL) var(--spaceXL) var(--spaceSM) var(--spaceXL);
+            }
+
+            .activitiesDetail main {
+                max-height: 600px;
+                overflow-y: auto;
+            }
+
+                .activitiesDetail main::-webkit-scrollbar {
+                    width: 0px;
+                    background: transparent;
+                }
+
+                .activitiesDetail main ul {
+                    list-style: none;
+                }
+
+                    .activitiesDetail main ul li {
+                        padding: var(--spaceSM) var(--spaceXL);
+                        color: var(--text);
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                        .activitiesDetail main ul li span:first-child {
+                            font-size: var(--sm);
+                            font-weight: var(--bold);
+                        }
+
+                        .activitiesDetail main ul li span:last-child {
+                            font-size: var(--md);
+                            font-weight: var(--light);
+                        }
+
+            .activitiesDetail footer {
+                padding: var(--spaceXS) var(--spaceXL) var(--spaceXL) var(--spaceXL);
+            }
+
+            .activitiesDetail button {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: var(--roundSM);
+                border-radius: var(--roundSM);
+                font-size: var(--md);
+                background-color: var(--secondary);
+                color: var(--negative);
+            }
+
+        /* (5) - Activities */
+        .activities {
+            grid-area: 7 / 15 / span 18 / span 10;
+            background: linear-gradient(180deg, var(--negative), var(--lightGradient));
+            border-radius: var(--roundLG);
+            box-shadow: var(--shadow);
+        }
+
+            .activities h1 {
+                color: var(--text);
+                font-weight: var(--light);
+                font-size: var(--lg);
+                padding: var(--spaceXL) var(--spaceXL) var(--spaceSM) var(--spaceXL);
+            }
+
+            .activities main ul {
+                list-style: none;
+            }
+
+                .activities main ul li {
+                    padding: var(--spaceSM) var(--spaceXL);
+                    color: var(--text);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                    .activities main ul li span:first-child {
+                        font-size: var(--sm);
+                        font-weight: var(--bold);
+                    }
+
+                    .activities main ul li span:last-child {
+                        font-size: var(--md);
+                        font-weight: var(--light);
+                    }
+
+            .activities footer {
+                padding: var(--spaceXS) var(--spaceXL) var(--spaceXL) var(--spaceXL);
+            }
+
+            .activities button {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: var(--roundSM);
+                border-radius: var(--roundSM);
+                font-size: var(--md);
+                background-color: var(--secondary);
+                color: var(--negative);
+            }
+
+       
+    </style>
+    <div class="wrapper">
+        <div class="balance">
+            <header>
+                <div class="date">
+                    <h1>Saldo</h1>
+                    <h2>@ViewBag.FechaActual</h2>
+                </div>
+            </header>
+            <footer>
+                <h1>
+                    <span>®</span>
+                    <span>@ViewBag.Saldo</span>
+                </h1>
+            </footer>
+        </div>
+        <div class="payment-due">
+            <div class="row">
+                <div class="col">
+                    <h1>Chantar</h1>
+
+                </div>
+                <div class="col">
+                    <a class="btn btn-edit" href="@Url.Action("Transferir", "Transferencia")">></a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="activities">
+            <header>
+                <h1>Movimientos</h1>
+            </header>
+            <main>
+
+                @if (Model.Count != 0)
+                {
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                @if (item.NombreEmisor != currentUser)
+                                {
+                                    <span>@item.NombreEmisor</span>
+                                }
+                                else if (item.NombreReceptor != currentUser)
+                                {
+                                    <span>@item.NombreReceptor</span>
+                                }
+                                <span class="@((item.CantidadFormateada.StartsWith("-")) ? "text-danger" : "text-success")">@item.CantidadFormateada</span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <h5>No hay movimientos disponibles</h5>
+                }
+
+            </main>
+            <footer>
+                <button type="button" onclick="location.href='@Url.Action("ListarTransferencias", "Home")'">
+                    Ver más
+                </button>
+            </footer>
+        </div>
+        <div class="summary">
+            <header>
+                <h1>Perfil</h1>
+            </header>
+            <main>
+                <div class="account-number">
+                    <h1>Tu nombre:</h1>
+                    <h1>@ViewBag.Username</h1>
+                </div>
+                <div class="transactions-limit">
+                    <h1>Tu identificador:</h1>
+                    <h1>@ViewBag.UserID</h1>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</main>

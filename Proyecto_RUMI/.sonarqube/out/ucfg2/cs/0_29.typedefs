@@ -1,0 +1,26 @@
+Ù
+?Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferenciaobjectt
+Lista6Transferencia(int)XProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.Lista6Transferencia(int)r
+ListaTransferencia(int)WProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.ListaTransferencia(int)\
+Detalle(int)LProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.Detalle(int)b
+transferencia()OProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.transferencia()l
+id_transferencia.getTProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_transferencia.getl
+id_transferencia.setTProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_transferencia.set^
+id_emisor.getMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_emisor.get^
+id_emisor.setMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_emisor.setb
+id_receptor.getOProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_receptor.getb
+id_receptor.setOProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.id_receptor.set\
+cantidad.getLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.cantidad.get\
+cantidad.setLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.cantidad.setX
+
+estado.getJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.estado.getX
+
+estado.setJProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.estado.setV
+	fecha.getIProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.fecha.getV
+	fecha.setIProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.fecha.sett
+estado_transferencia.getXProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.estado_transferencia.gett
+estado_transferencia.setXProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.estado_transferencia.setZ
+usuario.getKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.usuario.getZ
+usuario.setKProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.usuario.set\
+usuario1.getLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.usuario1.get\
+usuario1.setLProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia.usuario1.set

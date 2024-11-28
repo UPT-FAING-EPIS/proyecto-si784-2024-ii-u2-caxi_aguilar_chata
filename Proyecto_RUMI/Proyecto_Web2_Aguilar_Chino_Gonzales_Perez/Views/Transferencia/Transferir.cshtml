@@ -1,0 +1,79 @@
+﻿@model Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.transferencia
+
+@{
+    ViewBag.Title = "Transferir";
+}
+
+<main>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <div class="titulo-seccion">
+        <h1>Chantar</h1>
+    </div>
+    <div class="container formulario">
+        <form asp-action="Transferir" method="post" class="mb-3" id="transferForm">
+            <div>
+                <h1>@ViewBag.Username</h1>
+            </div>
+            <div class="row">
+                <div class="col-md mt-4">
+                    <label for="exampleInputEmail1" class="form-label">Identificador</label>
+                    <input type="text" class="form-control" id="IdReceptor" name="IdReceptor" required>
+                    
+                </div>
+                <div class="col-md mt-4">
+                    <label for="exampleInputAmount" class="form-label">Monto a transferir</label>
+                    <input type="number" class="form-control" id="Cantidad" name="Cantidad" step="0.01" required>
+                    
+                </div>
+                <div class="col-md d-flex align-items-center mt-4">
+                    <button type="button" class="btn btn-primary" onclick="confirmTransfer()">Chantar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Modal de confirmación -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirmar Transferencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas realizar esta transferencia?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmButton">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmTransfer() {
+            var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            confirmModal.show();
+        }
+
+        document.getElementById('confirmButton').addEventListener('click', function() {
+            document.getElementById('transferForm').submit();
+        });
+    </script>
+}

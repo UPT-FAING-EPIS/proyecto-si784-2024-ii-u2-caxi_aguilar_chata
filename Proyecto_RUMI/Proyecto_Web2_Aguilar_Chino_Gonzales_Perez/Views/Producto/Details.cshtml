@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.imagen_producto>
+@{
+	ViewBag.Title = "Imágenes del Producto";
+}
+<main>
+	@if (TempData["Message"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			@TempData["Message"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="titulo-seccion">
+		<h1>Gestión de imágenes</h1>
+		<button type="button" class="h1" onclick="location.href='@Url.Action("Create", "ImagenProducto", new {id = Model.FirstOrDefault().id_producto})'">
+			<i class="fa-solid fa-circle-plus"></i>
+		</button>
+	</div>
+	<div class="container">
+		<div class="row elementos-gestion">
+			@foreach (var item in Model)
+			{
+				<div class="col-md-6 mb-4">
+					<div class="elemento-gestion h-100">
+						<img src="@item.url_imagen" style="object-fit: cover; width: 100%; margin-bottom: 1rem;" alt="Imagen del producto">
+						<div class="card-body text-center">
+							<p class="h5">@item.descripcion</p>
+							<div class="actions">
+								<button type="button" class="btn btn-edit" onclick="location.href='@Url.Action("Edit", "ImagenProducto", new { id = item.id_imagen })'">
+									<i class="fa-solid fa-pen-to-square"></i> Editar
+								</button>
+								<button type="button" class="btn btn-delete" onclick="confirmarEliminacion('@Url.Action("Delete", "ImagenProducto", new { id = item.id_imagen })')">
+									<i class="fa-solid fa-trash-can"></i> Borrar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	<script>
+	function confirmarEliminacion(url) {
+			if (confirm("¿Estás seguro de que deseas eliminar esta imagen?")) {
+				window.location.href = url;
+			}
+		}</script>
+</main>

@@ -1,0 +1,10 @@
+‹
+EProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserControllerSystem.Web.Mvc.ControllerSystem.Web.Mvc.ControllerBaseobjectX
+Index()MProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Index()Z
+Create()NProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Create()Í
+ACreate(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario)‡Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Create(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario)^
+
+Edit(int?)PProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Edit(int?)É
+?Edit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario)…Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Edit(Proyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.usuario)b
+Delete(int?)RProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.Delete(int?)j
+UserController()VProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Controllers.UserController.UserController()

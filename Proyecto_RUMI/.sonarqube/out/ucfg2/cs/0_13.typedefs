@@ -1,0 +1,17 @@
+µ
+AProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carritoobject\
+Listar(int)MProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.Listar(int)h
+Obtener(int, int)SProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.Obtener(int, int)h
+detalle_carrito()SProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.detalle_carrito()r
+id_detalle_carrito.getXProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_detalle_carrito.getr
+id_detalle_carrito.setXProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_detalle_carrito.setb
+id_carrito.getPProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_carrito.getb
+id_carrito.setPProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_carrito.setd
+id_producto.getQProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_producto.getd
+id_producto.setQProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.id_producto.set^
+cantidad.getNProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.cantidad.get^
+cantidad.setNProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.cantidad.set\
+carrito.getMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.carrito.get\
+carrito.setMProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.carrito.set^
+producto.getNProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.producto.get^
+producto.setNProyecto_Web2_Aguilar_Chino_Gonzales_Perez.Models.detalle_carrito.producto.set
