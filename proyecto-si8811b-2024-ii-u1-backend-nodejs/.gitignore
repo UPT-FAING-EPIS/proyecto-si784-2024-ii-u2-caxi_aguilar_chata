@@ -21,3 +21,6 @@ puppeteer/.local-chromium/
 # Ignorar carpetas de construcción o distribución
 dist/
 build/
+
+# stryker temp files
+.stryker-tmp

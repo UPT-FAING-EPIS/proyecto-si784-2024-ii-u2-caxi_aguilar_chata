@@ -16,28 +16,41 @@ describe('Justification Integration Tests', () => {
   const testFilePath = path.join(__dirname, '../fixtures/test.pdf');
 
   beforeAll(() => {
+    const fixturesDir = path.join(__dirname, '../fixtures');
+
+    if (!fs.existsSync(fixturesDir)) {
+      console.log(`Creando directorio fixtures: ${fixturesDir}`);
+      fs.mkdirSync(fixturesDir, { recursive: true });
+    }
+
     if (!fs.existsSync(testFilePath)) {
+      console.log(`Creando archivo test.pdf en: ${testFilePath}`);
       fs.writeFileSync(testFilePath, 'Test PDF content');
     }
   });
 
   beforeEach(async () => {
+    // Crea un usuario para las pruebas
     testUser = await User.create({
       name: 'Test User',
       email: 'test@example.com',
       password: 'hashedPassword123',
-      confirmed: true
+      confirmed: true,
     });
-    
+
     authToken = generateJWT({ id: testUser._id });
+
+    // Limpia la colección de Justificaciones antes de cada prueba
     await Justification.deleteMany({});
   });
 
-  afterAll(async () => {
+  afterAll(() => {
     if (fs.existsSync(testFilePath)) {
+      console.log('Eliminando archivo test.pdf en:', testFilePath);
       fs.unlinkSync(testFilePath);
     }
   });
+
 
   describe('POST /api/v1/justifications/submit', () => {
     it('should submit justification successfully with attachment', async () => {

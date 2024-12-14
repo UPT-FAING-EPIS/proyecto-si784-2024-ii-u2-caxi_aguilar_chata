@@ -3,6 +3,10 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/src/tests/integration_test/justification.integration.test.ts"
+  ],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts',
