@@ -45,14 +45,14 @@ A continuación, se presentan los enlaces a los reportes generados durante el an
 1. **Reporte de Cobertura de Pruebas Unitarias:**  
    [Ver Reporte de Cobertura de Pruebas Unitarias](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/unit-tests)  
    Este reporte muestra los resultados de las pruebas unitarias realizadas sobre los módulos principales de la aplicación.  
-   - **Cobertura Total Alcanzada:** 90%  
+   - **Cobertura Total Alcanzada:** 88%  
    - **Herramienta Utilizada:** Jest  
 
 2. **Reporte de Cobertura de Pruebas de Integración:**  
    [Ver Reporte de Cobertura de Pruebas de Integración](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/integration-tests)  
    Este informe detalla los resultados de las pruebas de integración, enfocándose en la interacción entre los diferentes módulos de la aplicación.  
-   - **Cobertura Total Alcanzada:** 85%  
-   - **Herramienta Utilizada:** Postman  
+   - **Cobertura Total Alcanzada:** 67%  
+   - **Herramienta Utilizada:** Jest, Mocha  
 
 ---
 
