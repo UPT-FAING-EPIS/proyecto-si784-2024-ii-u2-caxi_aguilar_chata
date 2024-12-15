@@ -36,6 +36,10 @@ jobs:
         docker run --rm -v $(pwd):/src semgrep/semgrep semgrep scan \
           --config="p/default" --json --output semgrep.json --metrics=off
 
+    - name: List files after Semgrep scan
+      working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
+      run: ls -la
+
     # 6. Configurar Python y prospector-html
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -50,12 +54,25 @@ jobs:
       working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
       run: prospector-html --input semgrep.json --output semgrep-report.html --filter semgrep || true
 
-    # 8. Publicar el reporte en gh-pages
+    - name: List files after Semgrep report generation
+      working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
+      run: ls -la
+
+    # 8. Preparar el reporte para la publicación
+    - name: Prepare Semgrep report for deployment
+      working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
+      run: |
+        mkdir -p ../../semgrep-output
+        cp semgrep-report.html ../../semgrep-output/index.html
+
+    - name: List files in semgrep-output before deployment
+      run: ls -la semgrep-output
+
+    # 9. Publicar el reporte en gh-pages
     - name: Deploy Semgrep Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: proyecto-si8811b-2024-ii-u1-backend-nodejs
+        publish_dir: semgrep-output
         publish_branch: gh-pages
         destination_dir: semgrep-report
-
