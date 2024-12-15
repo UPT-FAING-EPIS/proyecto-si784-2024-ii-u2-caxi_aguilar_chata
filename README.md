@@ -64,7 +64,6 @@ A continuación, se presentan los enlaces a los reportes generados durante el an
    - **Propósito:** Identificar posibles fallos en las pruebas automatizadas.
 
 4. **Reporte de Aceptación:**  
-   [Ver Reporte de Aceptación](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/LivingDocReport.html)  
    Documenta los escenarios de prueba funcional que validan los requerimientos del usuario final.  
    - **Propósito:** Garantizar que las funcionalidades cumplen con las expectativas del usuario.
 
