@@ -34,9 +34,24 @@ Integrantes:
 
 # **Sistema UPT-SYNC**
 
-**Informe de Factibilidad**  
-**Versión 1.0**
+Link reporte de cobertura de Pruebas Unitarias:
+[https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/index.html](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/)
 
-| **CONTROL DE VERSIONES** | **Hecha por** | **Revisada por** | **Aprobada por** | **Fecha**     | **Motivo**          |
-|---------------------------|---------------|------------------|------------------|---------------|---------------------|
-| 1.0                       | MPV           | ELV              | ARV              | 10/10/2020    | Versión Original    |
+Link reporte de cobertura de Pruebas de Integracion:
+
+Link reporte de mutaciones: 
+https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/mutation-report.html
+
+Link reporte de aceptacion:
+https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/LivingDocReport.html
+
+Link reporte de Snyk:
+https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/container-test-result.html
+
+Link reporte de Semgrep:
+https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/semgrep-report.html
+
+
+* Luis Eduardo Caxi Calani
+* Victor aguilar Pinto
+
