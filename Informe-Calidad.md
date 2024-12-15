@@ -279,10 +279,64 @@ El siguiente diagrama representa la arquitectura general de **UPT-SYNC**, detall
 - **Gestión de Correo:**  
   - Nodemailer para el envío automatizado de notificaciones y solicitudes.
 
-**Diagrama:**  
-![Diagrama de Arquitectura](./media/diagrama-arquitectura.png)  
+**Diagrama:** 
+ 
+```mermaid
+flowchart TD
+    subgraph Frontend
+        ReactUI[React UI]
+        ReactRouter[React Router]
+    end
 
-> *Nota: Incluye aquí una imagen o el enlace al diagrama de arquitectura completo en el repositorio.*
+    subgraph Backend
+        NodeAPI[API REST en Node.js]
+        Auth[Autenticación]
+        Controllers[Controladores]
+        DBService[Servicio de Base de Datos]
+        FileUpload[Manejo de Archivos]
+        Scraper[Scraper de la Intranet]
+    end
+
+    subgraph MobileApp
+        FlutterApp[App en Flutter]
+    end
+
+    subgraph Cloud
+        MongoAtlas[(MongoDB Atlas)]
+        MailService[Servicio de Correos - Mailtrap]
+        FileStorage[Almacenamiento de Archivos]
+    end
+
+    subgraph ExternalSystems
+        Intranet[Intranet Universitaria]
+    end
+
+    ReactUI -->|API Calls| NodeAPI
+    ReactRouter --> ReactUI
+    FlutterApp -->|API Calls| NodeAPI
+
+    NodeAPI -->|CRUD| MongoAtlas
+    NodeAPI -->|Manejo de Archivos| FileStorage
+    NodeAPI -->|Notificaciones| MailService
+
+    Scraper -->|Obtener Datos| Intranet
+    Scraper -->|Sincronización| MongoAtlas
+    NodeAPI -->|Sincronización| Scraper
+
+    DBService --> MongoAtlas
+    FileUpload --> FileStorage
+    Auth --> MongoAtlas
+    Controllers --> DBService
+    Controllers --> Auth
+
+    style MongoAtlas fill:#f7df1e,stroke:#333,stroke-width:2px
+    style FileStorage fill:#87cefa,stroke:#333,stroke-width:2px
+    style MailService fill:#ffcccb,stroke:#333,stroke-width:2px
+    style ReactUI fill:#61dafb,stroke:#333,stroke-width:2px
+    style FlutterApp fill:#42a5f5,stroke:#333,stroke-width:2px
+    style Intranet fill:#d5f5e3,stroke:#333,stroke-width:2px
+    style Scraper fill:#ffa07a,stroke:#333,stroke-width:2px
+```
 
 ---
 
@@ -296,10 +350,294 @@ El diagrama de clases describe las relaciones entre los componentes principales 
   - `Justificación`: Permite la gestión de solicitudes de inasistencias.
   - `Sincronización`: Encargada del scraping y actualización de datos desde la intranet.
 
-**Diagrama:**  
-![Diagrama de Clases](./media/diagrama-clases.png)  
+### Diagrama de Clases General
+```mermaid
+classDiagram
+    %% Clases principales
+    class NodeAPI {
+        +startServer(): void
+    }
+    class AuthController {
+        +createAccount(req: Request, res: Response): Promise<void>
+        +login(req: Request, res: Response): Promise<void>
+        +confirmAccount(req: Request, res: Response): Promise<void>
+        +forgotPassword(req: Request, res: Response): Promise<void>
+        +updatePasswordWithToken(req: Request, res: Response): Promise<void>
+    }
+    class JustificationController {
+        +submitJustification(req: Request, res: Response): Promise<void>
+        +getStudentHistory(req: Request, res: Response): Promise<void>
+        +updateStatus(req: Request, res: Response): Promise<void>
+        +addComment(req: Request, res: Response): Promise<void>
+    }
+    class Scraper {
+        +fetchData(): Promise<any>
+        +parseData(rawData: any): any
+        +syncWithDatabase(): Promise<void>
+    }
+    class MongoAtlas {
+        +connectDB(): Promise<void>
+        +disconnectDB(): Promise<void>
+    }
+    class TokenService {
+        +generateToken(payload: any): string
+        +verifyToken(token: string): any
+        +hashPassword(password: string): Promise<string>
+        +checkPassword(password: string, hash: string): Promise<boolean>
+    }
+    class EmailService {
+        +sendConfirmationEmail(details: IEmail): Promise<void>
+        +sendPasswordResetToken(details: IEmail): Promise<void>
+        +sendJustificationEmail(details: IJustificationEmail): Promise<void>
+    }
+    class Logger {
+        +info(message: string): void
+        +error(message: string): void
+    }
 
-> *Nota: Añade el diagrama de clases aquí o proporciona un enlace para visualizarlo.*
+    %% Modelos de datos
+    class User {
+        -email: string
+        -password: string
+        -name: string
+        -confirmed: boolean
+        +save(): Promise<void>
+        +findById(id: string): User
+    }
+    class Token {
+        -token: string
+        -user: string
+        +save(): Promise<void>
+        +deleteOne(): Promise<void>
+        +findOne(query: object): Token
+    }
+    class Justification {
+        -studentId: string
+        -studentName: string
+        -date: Date
+        -reason: string
+        -status: string
+        -comments: Comment[]
+        -attachmentUrl: string
+        +save(): Promise<void>
+        +find(query: object): Justification[]
+        +findById(id: string): Justification
+    }
+    class Comment {
+        -author: string
+        -comment: string
+        -createdAt: Date
+    }
+
+    %% Relaciones
+    NodeAPI --> AuthController
+    NodeAPI --> JustificationController
+    NodeAPI --> MongoAtlas
+    NodeAPI --> Logger
+    NodeAPI --> Scraper
+    AuthController --> TokenService
+    AuthController --> EmailService
+    JustificationController --> MongoAtlas
+    JustificationController --> EmailService
+    JustificationController --> Logger
+    Scraper --> MongoAtlas
+    Scraper --> Logger
+    TokenService --> User
+    EmailService --> User
+    EmailService --> Justification
+    Justification "1" --> "n" Comment
+    Justification --> User
+    Token --> User
+
+    %% Anotaciones
+    class AuthController {
+        <<Controller>>
+    }
+    class JustificationController {
+        <<Controller>>
+    }
+    class Scraper {
+        <<Service>>
+    }
+    class EmailService {
+        <<Service>>
+    }
+    class MongoAtlas {
+        <<Database>>
+    }
+    class Logger {
+        <<Utility>>
+    }
+    class TokenService {
+        <<Utility>>
+    }
+    class User {
+        <<Model>>
+    }
+    class Justification {
+        <<Model>>
+    }
+    class Token {
+        <<Model>>
+    }
+    class Comment {
+        <<Model>>
+    }
+
+
+```
+
+### Diagrama de Clases - Autenticación
+
+```mermaid
+classDiagram
+    class AuthController {
+        +createAccount(email, password)
+        +login(email, password)
+        +requestConfirmationCode(email)
+        +forgotPassword(email)
+        +validateToken(token)
+        +updatePasswordWithToken(token, newPassword)
+        +user()
+        -hashPassword(password)
+        -checkPassword(password, hashedPassword)
+        -generateJWT(user)
+    }
+    
+    class User {
+        +email: String
+        +password: String
+        +confirmed: Boolean
+        +save()
+        +findOne(query)
+    }
+    
+    class Token {
+        +userId: ObjectId
+        +token: String
+        +createdAt: Date
+        +save()
+        +findOne(query)
+    }
+    
+    class EmailService {
+        +sendConfirmationEmail(email, token)
+        +sendPasswordResetEmail(email, token)
+    }
+    
+    AuthController --> User : uses
+    AuthController --> Token : uses
+    AuthController --> EmailService : uses
+```
+
+### Diagrama de Clases - Sincronización
+
+```mermaid
+classDiagram
+    class SyncController {
+        +syncUserData(codigo, contrasena)
+        +syncUserSchedule(codigo, contrasena)
+        +syncUserAttendance(codigo, contrasena)
+        +syncUserCredits(codigo, contrasena)
+        -processScheduleData(rawData)
+    }
+    
+    class IntranetSync {
+        +autenticar(codigo, contrasena)
+        +autenticarYExtraerHorario(codigo, contrasena)
+        +autenticarYExtraerAsistencias(codigo, contrasena)
+        +autenticarYExtraerCreditos(codigo, contrasena)
+    }
+    
+    class Schedule {
+        +userId: ObjectId
+        +scheduleData: Object
+        +save()
+    }
+    
+    class Attendance {
+        +userId: ObjectId
+        +attendanceData: Object
+        +save()
+    }
+    
+    class Credit {
+        +userId: ObjectId
+        +creditData: Object
+        +save()
+    }
+    
+    SyncController --> IntranetSync : uses
+    SyncController --> Schedule : uses
+    SyncController --> Attendance : uses
+    SyncController --> Credit : uses
+```
+### Modelo de Datos
+```mermaid
+classDiagram
+    class User {
+        +id: ObjectId
+        +email: String
+        +password: String
+        +role: String
+        +confirmed: Boolean
+    }
+    
+    class Student {
+        +id: ObjectId
+        +userId: ObjectId
+        +studentCode: String
+        +name: String
+        +lastName: String
+    }
+    
+    class Teacher {
+        +id: ObjectId
+        +userId: ObjectId
+        +teacherCode: String
+        +name: String
+        +lastName: String
+    }
+    
+    class Course {
+        +id: ObjectId
+        +code: String
+        +name: String
+        +teacherId: ObjectId
+    }
+    
+    class Class {
+        +id: ObjectId
+        +courseId: ObjectId
+        +date: Date
+        +startTime: Time
+        +endTime: Time
+    }
+    
+    class Attendance {
+        +id: ObjectId
+        +classId: ObjectId
+        +studentId: ObjectId
+        +status: String
+        +justification: String
+    }
+    
+    class Notification {
+        +id: ObjectId
+        +userId: ObjectId
+        +message: String
+        +createdAt: Date
+        +read: Boolean
+    }
+    
+    User <|-- Student : extends
+    User <|-- Teacher : extends
+    Teacher "1" -- "*" Course : teaches
+    Course "1" -- "*" Class : has
+    Class "1" -- "*" Attendance : records
+    Student "1" -- "*" Attendance : has
+    User "1" -- "*" Notification : receives
+```
 
 ---
 
