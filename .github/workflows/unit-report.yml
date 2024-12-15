@@ -1,5 +1,6 @@
 name: Publish Unit test Report to GitHub Pages
 
+
 on:
   push:
     branches:
@@ -14,21 +15,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # 2. Configurar Node.js
+    # 2. Cambiar al directorio del backend
+    - name: Change to backend directory
+      run: cd proyecto-si8811b-2024-ii-u1-backend-nodejs
+
+    # 3. Configurar Node.js
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16' # Ajusta según la versión usada en tu proyecto
+        node-version: '16' # Ajusta la versión según tu proyecto
 
-    # 3. Instalar dependencias
+    # 4. Instalar dependencias
     - name: Install dependencies
+      working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
       run: npm install
 
-    # 4. Generar el reporte de cobertura
+    # 5. Generar el reporte de cobertura
     - name: Run unit tests and generate coverage report
+      working-directory: proyecto-si8811b-2024-ii-u1-backend-nodejs
       run: npm run test:unit
 
-    # 5. Subir el reporte a la rama gh-pages
+    # 6. Subir el reporte a la rama gh-pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
