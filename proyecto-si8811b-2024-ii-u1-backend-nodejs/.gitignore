@@ -3,7 +3,7 @@ node_modules/
 uploads/
 
 # Ignorar la carpeta completa de logs
-logs/
+# logs/
 *.log
 
 # Ignorar logs generados por nodemon y PM2
