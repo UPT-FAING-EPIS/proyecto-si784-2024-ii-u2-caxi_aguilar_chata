@@ -153,18 +153,6 @@ Página con los videos de las pruebas:
 
 ---
 
-### **Resumen General de Reportes**
-
-| **Reporte**                         | **Propósito**                                   | **Herramienta**      | **Enlace**                                                                 |
-|-------------------------------------|-----------------------------------------------|----------------------|---------------------------------------------------------------------------|
-| Cobertura de Pruebas Unitarias      | Validar el correcto funcionamiento del código  | Jest                | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/unit-tests)  |
-| Cobertura de Pruebas de Integración | Evaluar la interacción entre módulos           | Jest, Mocha            | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/integration-tests) |
-| Reporte de Mutaciones               | Verificar la robustez de las pruebas           | Stryke            | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/mutation-report.html) |
-| Reporte de Aceptación               | Validar funcionalidades finales                | LivingDoc           | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/LivingDocReport.html) |
-| Reporte de Seguridad (Snyk)         | Detectar vulnerabilidades en dependencias      | Snyk                | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/container-test-result.html) |
-| Reporte de Seguridad (Semgrep)      | Identificar problemas en estándares de código  | Semgrep             | [Ver Reporte](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/semgrep-report.html) |
-
----
 
 **Nota:** Los reportes enlazados están alojados en GitHub Pages y documentan exhaustivamente los análisis y resultados de calidad, seguridad y pruebas implementados en **UPT-SYNC**.  
 
