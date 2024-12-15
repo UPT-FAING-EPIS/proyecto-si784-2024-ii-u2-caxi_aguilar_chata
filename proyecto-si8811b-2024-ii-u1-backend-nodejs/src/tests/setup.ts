@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { config } from 'dotenv';
+import dotenv from 'dotenv';
 
+
+// Carga las variables de entorno específicas para pruebas
+dotenv.config({ path: '.env.test' });
 
 config();
 
