@@ -72,7 +72,7 @@ A continuación, se presentan los enlaces a los reportes generados durante el an
 ### **10.3 Reportes de Seguridad**
 
 5. **Reporte de Análisis de Contenedor (Snyk):**  
-   [Ver Reporte de Seguridad - Snyk](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/container-test-result.html)  
+   [Ver Reporte de Seguridad - Snyk](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/snyk-report/)  
    Resultado del análisis de vulnerabilidades en las dependencias y contenedores utilizados en el proyecto.  
    - **Herramienta Utilizada:** Snyk  
 
