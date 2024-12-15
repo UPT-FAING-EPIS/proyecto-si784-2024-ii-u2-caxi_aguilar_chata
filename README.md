@@ -69,7 +69,21 @@ A continuación, se presentan los enlaces a los reportes generados durante el an
 
 ---
 
-### **10.3 Reportes de Prueba de Interfaz**  
+### **10.3 Reportes de Seguridad**
+
+5. **Reporte de Análisis de Contenedor (Snyk):**  
+   [Ver Reporte de Seguridad - Snyk](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/container-test-result.html)  
+   Resultado del análisis de vulnerabilidades en las dependencias y contenedores utilizados en el proyecto.  
+   - **Herramienta Utilizada:** Snyk  
+
+6. **Reporte de Análisis Estático de Código (Semgrep):**  
+   [Ver Reporte de Seguridad - Semgrep](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/semgrep-report/)  
+   Este análisis detecta posibles problemas de seguridad y estándares de código no cumplidos.  
+   - **Herramienta Utilizada:** Semgrep  
+
+---
+
+### **10.4 Reportes de Prueba de Interfaz**  
 Las pruebas de interfaz se realizan utilizando Playwright y están enfocadas en validar la interacción del usuario con la aplicación.
 
 * Objetivos de las Pruebas de Interfaz
@@ -139,19 +153,6 @@ Página con los videos de las pruebas:
 
 ---
 
-### **10.3 Reportes de Seguridad**
-
-5. **Reporte de Análisis de Contenedor (Snyk):**  
-   [Ver Reporte de Seguridad - Snyk](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/container-test-result.html)  
-   Resultado del análisis de vulnerabilidades en las dependencias y contenedores utilizados en el proyecto.  
-   - **Herramienta Utilizada:** Snyk  
-
-6. **Reporte de Análisis Estático de Código (Semgrep):**  
-   [Ver Reporte de Seguridad - Semgrep](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/semgrep-report.html)  
-   Este análisis detecta posibles problemas de seguridad y estándares de código no cumplidos.  
-   - **Herramienta Utilizada:** Semgrep  
-
----
 
 
 **Nota:** Los reportes enlazados están alojados en GitHub Pages y documentan exhaustivamente los análisis y resultados de calidad, seguridad y pruebas implementados en **UPT-SYNC**.  
