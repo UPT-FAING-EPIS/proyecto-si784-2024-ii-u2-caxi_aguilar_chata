@@ -35,7 +35,7 @@ Integrantes:
 # **Sistema UPT-SYNC**
 
 Link reporte de cobertura de Pruebas Unitarias:
-[https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u3-hernandez_contreras_paja/index.html](https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/)
+https://upt-faing-epis.github.io/proyecto-si784-2024-ii-u2-caxi_aguilar_chata/
 
 Link reporte de cobertura de Pruebas de Integracion:
 
